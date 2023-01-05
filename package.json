@@ -1,0 +1,23 @@
+{
+  "name": "treasurehacks-demo",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkhorev/treasurehacks-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkhorev/treasurehacks-demo/issues"
+  },
+  "homepage": "https://github.com/dkhorev/treasurehacks-demo#readme",
+  "dependencies": {
+    "date-fns": "^2.29.3"
+  }
+}
