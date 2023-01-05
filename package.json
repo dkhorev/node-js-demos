@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/dkhorev/treasurehacks-demo#readme",
   "dependencies": {
-    "date-fns": "^2.29.3"
+    "date-fns": "^2.29.3",
+    "fastify": "^4.11.0"
   }
 }
