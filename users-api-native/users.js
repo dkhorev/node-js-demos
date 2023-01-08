@@ -4,10 +4,12 @@ const data = [
 ];
 
 exports.usersApi = {
+  // Return all users
   all: function (req, res) {
     return data;
   },
 
+  // Register a new user
   register: function (email, name) {
     if (this.exists(email)) {
       throw new Error("User already exists");
@@ -19,6 +21,7 @@ exports.usersApi = {
     return data.find((user) => user.id === nextId);
   },
 
+  // Check if a user exists
   exists: function (email) {
     return data.some((user) => user.email === email);
   },
