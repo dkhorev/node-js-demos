@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
   if (req.method === "POST") {
     console.log("POST");
 
-    if (req.url === "/users/register" && req.method === "POST") {
+    if (req.url === "/users/register") {
       let body = "";
       req.on("data", function (chunk) {
         body += chunk;
