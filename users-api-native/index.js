@@ -1,4 +1,5 @@
 const http = require("node:http");
+const { usersApi } = require("./users");
 
 const hostname = "127.0.0.1";
 const port = 3000;
@@ -17,15 +18,20 @@ const server = http.createServer((req, res) => {
       });
 
       req.on("end", function () {
-        console.log(JSON.parse(body));
-        res.end("User Register");
+        const data = JSON.parse(body);
+        console.log(data);
+        const newUser = usersApi.register(data.email, data.name);
+        res.end(JSON.stringify(newUser));
       });
+
+      return;
     }
   } else {
     console.log("GET");
 
     if (req.url === "/users") {
-      res.end("Data Users");
+      res.end(JSON.stringify(usersApi.all()));
+
       return;
     }
   }
