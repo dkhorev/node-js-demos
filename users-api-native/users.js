@@ -16,9 +16,10 @@ exports.usersApi = {
     }
 
     const nextId = data.length + 1;
+    const user = { id: nextId, name, email };
     data.push({ id: nextId, name, email });
 
-    return data.find((user) => user.id === nextId);
+    return user;
   },
 
   // Check if a user exists
