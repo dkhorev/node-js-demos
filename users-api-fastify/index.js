@@ -20,6 +20,7 @@ fastify.post("/users/register", function (request, reply) {
   }
 });
 
+// https://www.fastify.io/docs/latest/Reference/Server/#setnotfoundhandler
 fastify.setNotFoundHandler((request, reply) => {
   return "Not Found";
 });
