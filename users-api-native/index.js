@@ -20,8 +20,13 @@ const server = http.createServer((req, res) => {
       req.on("end", function () {
         const data = JSON.parse(body);
         console.log(data);
-        const newUser = usersApi.register(data.email, data.name);
-        res.end(JSON.stringify(newUser));
+
+        try {
+          const newUser = usersApi.register(data.email, data.name);
+          res.end(JSON.stringify(newUser));
+        } catch (e) {
+          res.end(JSON.stringify({ error: e.message }));
+        }
       });
 
       return;
