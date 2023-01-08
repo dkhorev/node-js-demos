@@ -1,14 +1,14 @@
 const date = new Date();
 
-console.log("Date", date.toISOString());
+console.log("Date UTC", date);
 
 // add 3 days after the date in plain javascript
-const newDate = new Date(date.getTime() + 3 * 24 * 60 * 60 * 1000);
+const threeDaysLater = new Date(date.getTime() + 259200000);
 
-console.log("+3 days with plain JS", newDate.toISOString());
+console.log("+3 days with plain JS", threeDaysLater);
 
-// with date-fns
-// import { addDays } from 'date-fns'
+// with 'date-fns' library
+// import { addDays } from "date-fns";
 //
-// const anotherDate = addDays(date, 3);
-// console.log('+3 days with date-fns', anotherDate.toISOString());
+// const anotherThreeDaysLater = addDays(date, 3);
+// console.log("+3 days with date-fns", anotherThreeDaysLater);
