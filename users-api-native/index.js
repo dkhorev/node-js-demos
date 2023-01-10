@@ -31,7 +31,7 @@ const server = http.createServer((req, res) => {
 
       return;
     }
-  } else {
+  } else if (req.method === "GET") {
     console.log("GET");
 
     if (req.url === "/users") {
