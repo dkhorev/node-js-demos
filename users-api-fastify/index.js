@@ -16,7 +16,7 @@ fastify.post("/users/register", function (request, reply) {
     const newUser = usersApi.register(email, name);
     reply.send(newUser);
   } catch (e) {
-    reply.send({ error: e.message });
+    reply.status(422).send({ error: e.message });
   }
 });
 

@@ -19,6 +19,7 @@ const server = http.createServer((req, res) => {
           const newUser = usersApi.register(data.email, data.name);
           res.end(JSON.stringify(newUser));
         } catch (e) {
+          res.statusCode = 422;
           res.end(JSON.stringify({ error: e.message }));
         }
       });
