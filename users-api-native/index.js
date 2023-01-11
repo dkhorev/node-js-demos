@@ -6,8 +6,6 @@ const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "application/json");
 
   if (req.method === "POST") {
-    console.log("POST");
-
     if (req.url === "/users/register") {
       let body = "";
       req.on("data", function (chunk) {
@@ -16,7 +14,6 @@ const server = http.createServer((req, res) => {
 
       req.on("end", function () {
         const data = JSON.parse(body);
-        console.log(data);
 
         try {
           const newUser = usersApi.register(data.email, data.name);
@@ -29,8 +26,6 @@ const server = http.createServer((req, res) => {
       return;
     }
   } else if (req.method === "GET") {
-    console.log("GET");
-
     if (req.url === "/users") {
       res.end(JSON.stringify(usersApi.all()));
 
