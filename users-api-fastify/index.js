@@ -1,6 +1,9 @@
 import Fastify from "fastify";
 import { usersApi } from "./users.js";
 
+/**
+ * @type {FastifyInstance}
+ */
 const fastify = Fastify({
   logger: true,
 });
