@@ -1,9 +1,6 @@
 const http = require("node:http");
 const { usersApi } = require("./users");
 
-const hostname = "127.0.0.1";
-const port = 3000;
-
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
@@ -43,6 +40,9 @@ const server = http.createServer((req, res) => {
 
   res.end("Route not defined");
 });
+
+const hostname = "127.0.0.1";
+const port = 3000;
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
