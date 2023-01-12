@@ -1,8 +1,6 @@
 import Fastify from "fastify";
 
-const fastify = Fastify({
-  logger: false,
-});
+const fastify = Fastify();
 
 /**
  * @type {import('fastify').RouteShorthandOptions}

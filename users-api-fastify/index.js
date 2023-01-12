@@ -1,12 +1,7 @@
 import Fastify from "fastify";
 import { usersApi } from "./users.js";
 
-/**
- * @type {FastifyInstance}
- */
-const fastify = Fastify({
-  logger: true,
-});
+const fastify = Fastify();
 
 fastify.get("/users", function (request, reply) {
   reply.send(usersApi.all());
