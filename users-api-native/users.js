@@ -3,7 +3,7 @@ const data = [
   { id: 2, name: "Alice Doe", email: "alice@test.com" },
 ];
 
-exports.usersApi = {
+exports.usersDB = {
   // Return all users
   all: function (req, res) {
     return data;

@@ -1,5 +1,5 @@
 const http = require("node:http");
-const { usersApi } = require("./users");
+const { usersDB } = require("./users");
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
       const data = JSON.parse(body);
 
       try {
-        const newUser = usersApi.register(data.email, data.name);
+        const newUser = usersDB.register(data.email, data.name);
         res.end(JSON.stringify(newUser));
       } catch (e) {
         res.statusCode = 422;
@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
 
     return;
   } else if (req.method === "GET" && req.url === "/users") {
-    res.end(JSON.stringify(usersApi.all()));
+    res.end(JSON.stringify(usersDB.all()));
 
     return;
   }
